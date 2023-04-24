@@ -1,16 +1,27 @@
+import React, { useEffect, useState } from 'react';
 
+function CurrentWeather() {
+    const api = process.env.REACT_APP_api_key;
+    const [coordinates, setCoordinates] = useState([]);
 
+    //weather constantly change?
+    useEffect(() => {
+        fetch("https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=${api}")
+            .then((response) => response.json())
+            .then((data) => setCoordinates(data.coord))
+            .catch((error) => console.log("Error: ", error))
+    }, []);
 
-// function App() {
+    fetch("https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=${api}")
+        .then((response) => response.json())
+        .then((data) => setCoordinates(data.coord))
+        .catch((error) => console.log("Error: ", error))
 
-//     //const url = "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={2e644d9471fbd90155f27f6532383c9b}"
-//     function Component() {
-//       const API_KEY = process.env.REACT_APP_api_key
-//     }
-  
-//     return (
-//       <div className="App">
-  
-//       </div>
-//     );
-//   }
+    return (
+        <>
+            <h2>Current weather for (city)</h2>
+        </>
+    );
+}
+
+export default CurrentWeather;
