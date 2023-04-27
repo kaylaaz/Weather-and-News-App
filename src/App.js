@@ -9,9 +9,9 @@ function App() {
   return (
     <>
       <CurrentLocation />
-      <CurrentWeather />
-      <HourlyNextDay />
-      <DailyNextWeek />
+      {/* <CurrentWeather /> */}
+      {/* <HourlyNextDay />
+      <DailyNextWeek /> */}
     </>
   );
 }
