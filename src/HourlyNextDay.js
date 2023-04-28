@@ -31,14 +31,13 @@ function HourlyNextDay({ lat, lon }) {
                             height="300"
                             width="300"
                             class="image" /></center>
-                        <p>{index}: {hour.temp}</p>
-                        <p>{hour.humidity}</p>
-                        <p>{hour.visibility}</p>
-                        <p>{hour.wind_speed}</p>
-                        <p>{hour.wind_deg}</p>
-                        <p>{hour.clouds}</p>
-                        <p>{hour.uvi}</p>
-
+                        <p>{index} Temperature: {hour.temp}°F</p>
+                        <p>Humidity: {hour.humidity}%</p>
+                        <p>Average visbility: {hour.visibility} km</p>
+                        <p>Wind speed: {hour.wind_speed} miles/hour</p>
+                        <p>Wind direction: {hour.wind_deg} degrees</p>
+                        <p>Cloudiness: {hour.clouds}%</p>
+                        <p>UV index: {hour.uvi}</p>
                     </>
                 )
             })}

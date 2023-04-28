@@ -43,6 +43,7 @@ p {
   color: black;
   text-align: center;
   font-size: 38px;
+  border-top: 3px solid black;
   border-bottom: 3px solid black;
 }
 

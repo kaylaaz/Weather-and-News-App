@@ -33,12 +33,13 @@ function CurrentWeather({ lat, lon }) {
                 width="300"
                 class="image" /></center>
             <p class="currentWeather">{data.temp}°F</p>
-            <p>{data.humidity}</p>
-            <p>{data.visibility}</p>
-            <p>{data.wind_speed}</p>
-            <p>{data.wind_deg}</p>
-            <p>{data.clouds}</p>
-            <p>{data.uvi}</p>
+            <p>Feels like: {data.feels_like}°F</p>
+            <p>Humidity: {data.humidity}%</p>
+            <p>Average visbility: {data.visibility} km</p>
+            <p>Wind speed: {data.wind_speed} miles/hour</p>
+            <p>Wind direction: {data.wind_deg} degrees</p>
+            <p>Cloudiness: {data.clouds}%</p>
+            <p>UV index: {data.uvi}</p>
             {/* <p>{data.weather[0].icon}</p> */}
 
             {/* <img src={imgLink} /> */}

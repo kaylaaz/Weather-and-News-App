@@ -18,7 +18,7 @@ function DailyNextWeek({ lat, lon }) {
     return (
         <>
             <h2 class="title">Weather for the next week</h2>
-            {data.map((hour, index) => {
+            {data.slice(0, 7).map((hour, index) => {
                 return (
                     <>
                         <center><img src="https://openweathermap.org/img/wn/01d@2x.png"
@@ -26,19 +26,13 @@ function DailyNextWeek({ lat, lon }) {
                             height="300"
                             width="300"
                             class="image" /></center>
-                        <p>{index}: {hour.temp.day}</p>
-                        <p>{hour.temp.min}</p>
-                        <p>{hour.temp.max}</p>
-                        <p>{hour.temp.night}</p>
-                        <p>{hour.temp.eve}</p>
-                        <p>{hour.temp.morn}</p>
-                        <p>{hour.humidity}</p>
-                        <p>{hour.visibility}</p>
-                        <p>{hour.wind_speed}</p>
-                        <p>{hour.wind_deg}</p>
-                        <p>{hour.clouds}</p>
-                        <p>{hour.uvi}</p>
-
+                        <p>{index} Temperature:  {hour.temp.day}°F</p>
+                        <p>Minimum daily temperature: {hour.temp.min}°F</p>
+                        <p>Maximum daily temperature: {hour.temp.max}</p>
+                        <p>Morning temperature: {hour.temp.morn}</p>
+                        <p>Night temperature: {hour.temp.night}</p>
+                        <p>Humidity: {hour.humidity}%</p>
+                        <p>Wind speed: {hour.wind_speed} miles/hour</p>
                     </>
                 )
             })}
