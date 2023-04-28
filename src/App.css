@@ -13,6 +13,39 @@
   }
 }
 
+p {
+  text-align: center;
+  margin: 30px;
+}
+
+.image {
+  margin: -80px;
+}
+
+.location {
+  text-align: center;
+}
+
+.currentWeather {
+  color: black;
+  font-weight: bold;
+  font-size: 38px;
+}
+
+.form {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px;
+}
+
+.title {
+  color: black;
+  text-align: center;
+  font-size: 38px;
+  border-bottom: 3px solid black;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -32,6 +65,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

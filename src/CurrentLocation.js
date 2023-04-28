@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 import CurrentWeather from './CurrentWeather.js';
 import HourlyNextDay from './HourlyNextDay.js';
 import DailyNextWeek from './DailyNextWeek.js';
+import TopStories from './TopStories.js';
 
 function CurrentLocation() {
 
@@ -13,6 +15,7 @@ function CurrentLocation() {
     const [lat, setLat] = useState('');
     const [lon, setLon] = useState('');
     const [toggle, setToggle] = useState(false);
+    const [page, setPage] = useState(false);
 
     useEffect(() => {
         if (zipCode !== '') {
@@ -52,35 +55,43 @@ function CurrentLocation() {
 
     return (
         <>
-            <h2>Please enter your information</h2>
-            <form >
-                <label>Address:</label>
+            <h2 class="location">Your Current Location</h2>
+            <form class="form">
+                <label>Address: </label>
                 <input type="text"
                     value={address}
                     onChange={(e) => { handleAddress(e) }} />
 
 
-                <label>City: </label>
+                <label> City: </label>
                 <input type="text"
                     value={city}
                     onChange={(e) => { handleCity(e) }} />
 
 
-                <label>Zip Code: </label>
+                <label> Zip Code: </label>
                 <input type="text"
                     value={zipCode}
                     onChange={(e) => { handleZipCode(e) }} />
             </form>
 
             <>
-                <Button variant="contained"
+                <Box textAlign='center'>
+                    <Button variant="contained"
+                        type="submit"
+                        onClick={() => { setToggle(!toggle); setPage(true); }}
+                    >Submit
+                    </Button>
+                </Box>
+                {/* <Button variant="contained"
                     type="submit"
                     onClick={() => setToggle(!toggle)}>Submit
-                </Button>
+                </Button> */}
                 <p>Your latitude and longitude are: {lat}, {lon}</p>
                 <CurrentWeather lat={lat} lon={lon} />
-                {/* <HourlyNextDay lat={lat} lon={lon} /> */}
-                {/* <DailyNextWeek /> */}
+                <HourlyNextDay lat={lat} lon={lon} />
+                <DailyNextWeek lat={lat} lon={lon} />
+                <TopStories />
             </>
 
 
