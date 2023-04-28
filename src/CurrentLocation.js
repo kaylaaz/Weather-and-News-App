@@ -16,6 +16,7 @@ function CurrentLocation() {
     const [lon, setLon] = useState('');
     const [toggle, setToggle] = useState(false);
     const [page, setPage] = useState(false);
+    const [formSubmitted, setFormSubmitted] = useState(false);
 
     useEffect(() => {
         if (zipCode !== '') {
@@ -51,9 +52,48 @@ function CurrentLocation() {
         setZipCode(e.target.value);
     }
 
-
+    const handleSubmit = (e) => {
+        // e.preventDefault();
+        setFormSubmitted(true);
+    }
 
     return (
+        // <>
+        //     <h2 class="location">Your Current Location</h2>
+        //     <form class="form" onSubmit={handleSubmit}>
+        //         <label>Address: </label>
+        //         <input type="text"
+        //             value={address}
+        //             onChange={(e) => { handleAddress(e) }} />
+
+
+        //         <label> City: </label>
+        //         <input type="text"
+        //             value={city}
+        //             onChange={(e) => { handleCity(e) }} />
+
+
+        //         <label> Zip Code: </label>
+        //         <input type="text"
+        //             value={zipCode}
+        //             onChange={(e) => { handleZipCode(e) }} />
+        //     </form>
+        //     <Box textAlign='center'>
+        //         <Button variant="contained"
+        //             type="submit"
+        //             onClick={() => { setToggle(!toggle); setPage(true); }}
+        //         >Submit
+        //         </Button>
+        //     </Box>
+        //     {formSubmitted && (
+        //         // <p>Your latitude and longitude are: {lat}, {lon}</p>
+        //         <CurrentWeather lat={lat} lon={lon} />
+        //         // <DailyNextWeek lat={lat} lon={lon} />
+        //         // <TopStories />
+        //     )}
+        // </>
+
+
         <>
             <h2 class="location">Your Current Location</h2>
             <form class="form">
@@ -87,14 +127,13 @@ function CurrentLocation() {
                     type="submit"
                     onClick={() => setToggle(!toggle)}>Submit
                 </Button> */}
-                <p>Your latitude and longitude are: {lat}, {lon}</p>
+                {/* {setPage && (<p>Your latitude and longitude are: {lat}, {lon}</p>)} */}
+                {/* <p>First Your latitude and longitude are: {lat}, {lon}</p> */}
                 <CurrentWeather lat={lat} lon={lon} />
                 <HourlyNextDay lat={lat} lon={lon} />
                 <DailyNextWeek lat={lat} lon={lon} />
                 <TopStories />
             </>
-
-
         </>
     );
 }
