@@ -69,8 +69,13 @@ p {
 
 .container-hourly {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item-hourly {
   flex-basis: 20%;
+  /* Distribute the items in 5 columns (5 items per row) */
 }
 
 .items {
