@@ -30,15 +30,6 @@ function CurrentLocation() {
         }
     }, [toggle]);
 
-    // useEffect(() => {
-    //     fetch(`http://api.openweathermap.org/geo/1.0/zip?zip=${zipCode}&appid=${api}`)
-    //         .then((response) => response.json())
-    //         .then((data) => {
-    //             setLat(data.lat)
-    //             setLon(data.lon)
-    //         })
-    //         .catch((error) => console.log("Error: ", error))
-    // }, [toggle]);
 
     const handleAddress = (e) => {
         setAddress(e.target.value);
@@ -53,7 +44,6 @@ function CurrentLocation() {
     }
 
     const handleSubmit = (e) => {
-        // e.preventDefault();
         setFormSubmitted(true);
     }
 
@@ -123,12 +113,6 @@ function CurrentLocation() {
                     >Submit
                     </Button>
                 </Box>
-                {/* <Button variant="contained"
-                    type="submit"
-                    onClick={() => setToggle(!toggle)}>Submit
-                </Button> */}
-                {/* {setPage && (<p>Your latitude and longitude are: {lat}, {lon}</p>)} */}
-                {/* <p>First Your latitude and longitude are: {lat}, {lon}</p> */}
                 <CurrentWeather lat={lat} lon={lon} />
                 <HourlyNextDay lat={lat} lon={lon} />
                 <DailyNextWeek lat={lat} lon={lon} />

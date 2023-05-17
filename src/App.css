@@ -16,10 +16,17 @@
 p {
   text-align: center;
   margin: 30px;
+  font-weight: bold;
+}
+
+.story {
+  flex: 1;
+  text-align: center;
 }
 
 .image {
-  margin: -80px;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
 .location {
@@ -45,6 +52,39 @@ p {
   font-size: 38px;
   border-top: 3px solid black;
   border-bottom: 3px solid black;
+}
+
+.news-title {
+  color: black;
+  text-align: center;
+  font-size: 38px;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  margin-top: 780px;
+}
+
+.container {
+  display: flex
+}
+
+.container-hourly {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 20%;
+}
+
+.items {
+  flex-grow: 1;
+  height: 100px;
+}
+
+.item {
+  flex-grow: 1;
+  height: 100px;
+}
+
+.item+.item {
+  margin-left: 2%;
 }
 
 .App-header {
