@@ -34,7 +34,7 @@ function HourlyNextDay({ lat, lon }) {
                                     className="image"
                                 />
                             </center>
-                            <p>Time: {new Date(hour.dt * 1000).toLocaleString('en-US', { timeZone: 'America/Los_Angeles', timeStyle: 'short' })}</p>
+                            <p>{new Date(hour.dt * 1000).toLocaleString('en-US', { timeZone: 'America/Los_Angeles', timeStyle: 'short' })}</p>
                             <p>Temperature: {hour.temp}°F</p>
                             <p>Humidity: {hour.humidity}%</p>
                             <p>Average visibility: {hour.visibility} km</p>

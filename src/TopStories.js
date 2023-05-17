@@ -7,6 +7,7 @@ function TopStories() {
     const api = process.env.REACT_APP_api_key_nyt;
 
 
+
     const [data, setData] = useState([]);
 
     useEffect(() => {
